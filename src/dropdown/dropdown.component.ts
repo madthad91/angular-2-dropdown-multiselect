@@ -468,6 +468,7 @@ export class MultiselectDropdown
       event.preventDefault
     ) {
       event.preventDefault();
+      console.log('i fired');
     }
   }
 
