@@ -37,9 +37,9 @@
           [ngStyle]="getItemStyleSelectionDisabled()">
           <ng-container [ngSwitch]="settings.checkedStyle">
             <div *ngSwitchCase="'clarity'" class="checkbox">
-                  <input type="checkbox" id="getClarityTitle(i)" [checked]="isSelected(option)" (click)="preventCheckboxCheck($event, option)"
+                  <input type="checkbox" id="{{getClarityTitle(i)}}" [checked]="isSelected(option)" (click)="preventCheckboxCheck($event, option)"
                       [disabled]="isCheckboxDisabled()" [ngStyle]="getItemStyleSelectionDisabled()" />
-                  <label for="getClarityTitle(i)">{{ option.name }}</label>
+                  <label for="{{getClarityTitle(i)}}">{{ option.name }}</label>
                 </div>
             <input *ngSwitchCase="'checkboxes'" type="checkbox" [checked]="isSelected(option)" (click)="preventCheckboxCheck($event, option)"
               [disabled]="isCheckboxDisabled()" [ngStyle]="getItemStyleSelectionDisabled()" />
