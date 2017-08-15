@@ -41,12 +41,6 @@ import {
  * https://github.com/softsimon/angular-2-dropdown-multiselect
  */
 
-const MULTISELECT_VALUE_ACCESSOR: any = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => MultiselectDropdown),
-  multi: true
-};
-
 @Component({
   selector: 'ss-multiselect-dropdown',
   templateUrl: './dropdown.component.html',
@@ -86,7 +80,7 @@ export class MultiselectDropdown
   differ: any;
   numSelected = 0;
   renderItems = true;
-    defaultSettings: IMultiSelectSettings = {
+  defaultSettings: IMultiSelectSettings = {
     closeOnClickOutside: true,
     pullRight: false,
     enableSearch: false,
@@ -321,7 +315,8 @@ export class MultiselectDropdown
           const childIds = this.options
             .filter(
               child =>
-                this.model.indexOf(child.id) > -1 && child.parentId === option.id
+                this.model.indexOf(child.id) > -1 &&
+                child.parentId === option.id
             )
             .map(child => child.id);
           this.model = this.model.filter(id => childIds.indexOf(id) < 0);
@@ -513,3 +508,9 @@ export class MultiselectDropdown
     });
   }
 }
+
+const MULTISELECT_VALUE_ACCESSOR: any = {
+  provide: NG_VALUE_ACCESSOR,
+  useExisting: forwardRef(() => MultiselectDropdown),
+  multi: true
+};
