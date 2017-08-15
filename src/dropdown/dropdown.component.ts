@@ -512,4 +512,6 @@ export class MultiselectDropdown
       filter: this.filterControl.value
     });
   }
+
+  getClarityTitle = (idx:number) =>`${this.title.replace(/s/g, '-')}-${idx}`;
 }
