@@ -39,7 +39,7 @@
             <div *ngSwitchCase="'clarity'" class="checkbox">
                   <input type="checkbox" [attr.id]="clarityTitle + '-' + i" [checked]="isSelected(option)" (click)="preventCheckboxCheck($event, option)"
                       [disabled]="isCheckboxDisabled()" [ngStyle]="getItemStyleSelectionDisabled()" />
-                  <label [attr.for]="clarityTitle + '-' + i">{{ option.name }}</label>
+                  <label #label [attr.for]="clarityTitle + '-' + i">{{ option.name }}</label>
                 </div>
             <input *ngSwitchCase="'checkboxes'" type="checkbox" [checked]="isSelected(option)" (click)="preventCheckboxCheck($event, option)"
               [disabled]="isCheckboxDisabled()" [ngStyle]="getItemStyleSelectionDisabled()" />
@@ -48,7 +48,7 @@
               <i *ngIf="isSelected(option)" class="fa fa-check" aria-hidden="true"></i>
             </span>
           </ng-container>
-          <span [ngClass]="settings.itemClasses" [style.font-weight]="this.parents.indexOf(option.id)>=0?'bold':'normal'">
+          <span *ngIf="settings.checkedStyle !== 'clarity'" [ngClass]="settings.itemClasses" [style.font-weight]="this.parents.indexOf(option.id)>=0?'bold':'normal'">
             {{ option.name }}
           </span>
         </a>
