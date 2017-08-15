@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "strictNullChecks": false,
     "typeRoots": [
-      "node_modules/@types"
+      "node_modules/@types",
+      "node_modules/@angular"
     ]
   },
   "files": [
