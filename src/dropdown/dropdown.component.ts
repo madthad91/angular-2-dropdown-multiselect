@@ -188,7 +188,7 @@ export class MultiselectDropdown
     this.settings = Object.assign(this.defaultSettings, this.settings);
     this.texts = Object.assign(this.defaultTexts, this.texts);
     this.title = this.texts.defaultTitle || '';
-    this.clarityTitle = this.title.replace(/s/g, '-');
+    this.clarityTitle = this.title.replace(/\s/g, '-');
 
     this.filterControl.valueChanges.takeUntil(this.destroyed$).subscribe(
       function() {
