@@ -297,6 +297,9 @@ export class MultiselectDropdown
   }
 
   setSelected(_event: Event, option: IMultiSelectOption) {
+    if((_event.target as HTMLElement).tagName == 'LABEL'){
+      return;
+    }
     if (option.isLabel) {
       return;
     }
@@ -468,7 +471,6 @@ export class MultiselectDropdown
       event.preventDefault
     ) {
       event.preventDefault();
-      console.log('i fired');
     }
   }
 
