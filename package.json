@@ -17,7 +17,7 @@
     "ng-inline": "ng2-inline -u 1 -o dist/tmp -r src/**/*.component.ts",
     "prepare-package": "node scripts/release.js",
     "ngc": "ngc -p tsconfig.release.json",
-    "postinstall": "npm install npm run build && rimraf -rf ./node_modules && rimraf -rf ./src"
+    "postinstall": "npm install && npm run build && rimraf -rf ./node_modules && rimraf -rf ./src"
   },
   "repository": {
     "type": "git",
